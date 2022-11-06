@@ -1,3 +1,4 @@
+import { AfterContentChecked } from '@angular/core';
 import { AfterContentInit } from '@angular/core';
 import {
   Component,
@@ -16,7 +17,7 @@ import {
   encapsulation: ViewEncapsulation.Emulated, // None, Native
 })
 export class ServerElementComponent
-  implements OnInit, OnChanges, DoCheck, AfterContentInit
+  implements OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked
 {
   @Input('srvElement') element: {
     type: string;
@@ -44,5 +45,9 @@ export class ServerElementComponent
 
   ngAfterContentInit(): void {
     console.log('ngAfterContentInit called');
+  }
+
+  ngAfterContentChecked(): void {
+    console.log('ngAfterContentChecked called');
   }
 }
