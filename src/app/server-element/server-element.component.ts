@@ -19,6 +19,7 @@ export class ServerElementComponent implements OnInit, OnChanges {
     name: string;
     content: string;
   };
+  @Input('name') name: string;
 
   constructor() {
     console.log('constructor called!');
