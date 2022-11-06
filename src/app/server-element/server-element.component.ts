@@ -1,3 +1,4 @@
+import { AfterContentInit } from '@angular/core';
 import {
   Component,
   DoCheck,
@@ -14,7 +15,9 @@ import {
   styleUrls: ['./server-element.component.css'],
   encapsulation: ViewEncapsulation.Emulated, // None, Native
 })
-export class ServerElementComponent implements OnInit, OnChanges, DoCheck {
+export class ServerElementComponent
+  implements OnInit, OnChanges, DoCheck, AfterContentInit
+{
   @Input('srvElement') element: {
     type: string;
     name: string;
@@ -37,5 +40,9 @@ export class ServerElementComponent implements OnInit, OnChanges, DoCheck {
 
   ngDoCheck(): void {
     console.log('ngDoCheck called');
+  }
+
+  ngAfterContentInit(): void {
+    console.log('ngAfterContentInit called');
   }
 }
