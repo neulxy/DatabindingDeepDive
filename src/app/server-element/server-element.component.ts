@@ -1,5 +1,6 @@
 import {
   Component,
+  DoCheck,
   Input,
   OnChanges,
   OnInit,
@@ -13,7 +14,7 @@ import {
   styleUrls: ['./server-element.component.css'],
   encapsulation: ViewEncapsulation.Emulated, // None, Native
 })
-export class ServerElementComponent implements OnInit, OnChanges {
+export class ServerElementComponent implements OnInit, OnChanges, DoCheck {
   @Input('srvElement') element: {
     type: string;
     name: string;
@@ -32,5 +33,9 @@ export class ServerElementComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges) {
     console.log('ngOnChanges called');
     console.log(changes);
+  }
+
+  ngDoCheck(): void {
+    console.log('ngDoCheck called');
   }
 }
