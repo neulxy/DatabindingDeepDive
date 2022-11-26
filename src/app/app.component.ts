@@ -10,6 +10,8 @@ export class AppComponent {
     { type: 'server', name: 'Testserver', content: 'Just a test!' },
   ];
 
+  firedNumbers = [];
+
   onServerAdded(serverData: { serverName: string; serverContent: string }) {
     this.serverElements.push({
       type: 'server',
@@ -35,6 +37,7 @@ export class AppComponent {
   }
 
   onIntervalFired(firedNumber: number) {
-    console.log(firedNumber);
+    this.firedNumbers.push(firedNumber);
+    console.log(this.firedNumbers);
   }
 }
