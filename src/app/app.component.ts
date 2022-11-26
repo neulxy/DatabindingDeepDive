@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ɵɵsetComponentScope } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -32,5 +32,9 @@ export class AppComponent {
 
   onDestroyFirst() {
     this.serverElements.splice(0, 1);
+  }
+
+  onIntervalFired(firedNumber: number) {
+    console.log(firedNumber);
   }
 }
