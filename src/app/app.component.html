@@ -57,4 +57,5 @@
     </li>
   </ol>
   <game-control (intervalFired)="onIntervalFired($event)"></game-control>
+  <app-odd *ngFor="let oddNumber of oddNumbers" [number]="oddNumber"></app-odd>
 </div>
